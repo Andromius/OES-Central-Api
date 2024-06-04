@@ -1,0 +1,6 @@
+@OESCentralApi_HostAddress = http://localhost:5093
+
+GET {{OESCentralApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>04383bec-e2d5-4942-a41e-bee2e0281eaa</UserSecretsId>
+	<PublishProfile>DefaultContainer</PublishProfile>
+	<ContainerRegistry>registry.hub.docker.com</ContainerRegistry>
+	<ContainerRepository>andromius/oes-central-api</ContainerRepository>
+	<ContainerImageTags>x64;latest</ContainerImageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	<ContainerPort Include="80" Type="tcp" />
+	<ContainerPort Include="443" Type="tcp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OESCentralApi.Persistence\OESCentralApi.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
